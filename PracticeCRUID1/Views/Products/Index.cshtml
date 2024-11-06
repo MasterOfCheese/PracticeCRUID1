@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Product>
+
+    //search form here
+<form method="post" asp-action="Search">
+    <input type="text" name="keywords" />
+    <button type="submit">Search</button>
+</form>
+
+    <table>
+        <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            @foreach(Product p in Model)
+            {
+                <tr>
+                    <td>@p.Id</td>
+                    <td>@p.Name</td>
+                    <td>@p.Description</td>
+                    <td>@p.Price</td>
+                    <td>@p.Quantity</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@p.Id">Edit</a>
+                        <a asp-action="Details" asp-route-id="@p.Id">Details</a>
+                        <a asp-action="Delete" asp-route-id="@p.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+            
+        </tbody>
+    </table>

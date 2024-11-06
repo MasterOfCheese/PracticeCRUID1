@@ -1,0 +1,10 @@
+﻿@model Product
+
+<form method="post">
+    <p>Id: <input asp-for="Id" value="@Model.Id" /></p>
+    <p>Name: <input asp-for="Name" value="@Model.Name" /></p>
+    <p>Description: <input asp-for="Description" value="@Model.Description" /></p>
+    <p>Price: <input asp-for="Price" value="@Model.Price" /></p>
+    <p>Quantity: <input asp-for="Quantity" value="@Model.Quantity" /></p>
+    <button type="submit">Create</button>
+</form>
