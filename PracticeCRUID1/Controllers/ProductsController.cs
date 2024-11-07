@@ -21,7 +21,7 @@ namespace PracticeCRUID1.Controllers
         // GET: ProductsController/Details/5
         public ActionResult Details(int id)
         {
-            return View("Index", ProductRepository.product(id));
+            return View(ProductRepository.product(id));
         }
 
         // GET: ProductsController/Create
